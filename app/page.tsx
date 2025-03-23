@@ -4,6 +4,8 @@ import { appClient } from "@/lib/auth0"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Auth0Logo } from "@/components/auth0-logo"
+import { Toaster } from 'sonner'
+
 
 import { SignUpForm } from "./signup-form"
 import { WelcomeBackCard } from "./welcome-back-card"
@@ -40,19 +42,17 @@ export default async function Home() {
         <div className="absolute inset-0 bg-black" />
         <div className="relative z-20 flex items-center text-lg font-medium">
           <Auth0Logo className="mr-2 size-8" />
-          <span className="font-semibold">SaaStart</span>
+          <span className="font-semibold">Clickscape</span>
         </div>
         <div className="relative z-20 m-auto max-w-sm text-center">
           <blockquote className="space-y-2">
             <div className="space-y-8">
               <p className="text-lg font-medium">
-                SaaStart is a reference B2B SaaS application built using Next.js
-                and Auth0 by Okta.
+              Unlock Their Ads
+              Secrets. Stay Ahead.
               </p>
               <p className="text-lg">
-                It features multi-tenancy support, user management and access
-                controls, security policies, self-service Single Sign-On
-                configuration and more out-of-the-box.
+              Get alerts, when competitors launch new ads. Save and browse their ad library, forever.Reveal their ad spend and seasonal trends.
               </p>
             </div>
           </blockquote>

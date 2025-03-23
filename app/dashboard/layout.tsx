@@ -72,24 +72,14 @@ export default async function DashboardLayout({
           <div className="flex items-center space-x-2">
             <Auth0Logo className="h-6 w-6" />
 
-            <div className="font-mono font-semibold">
-              <Link href="/">SaaStart</Link>
+            <div className="font-semibold">
+              <Link href="/">Clickscape</Link>
             </div>
-
-            <div>
+      
               <Button variant="link" asChild>
                 <Link href="/">Home</Link>
               </Button>
-
-              <Button variant="link" asChild>
-                <Link
-                  href="https://github.com/auth0-developer-hub/auth0-b2b-saas-starter"
-                  target="_blank"
-                >
-                  Source
-                </Link>
-              </Button>
-            </div>
+        
           </div>
 
           <div className="items-center gap-x-2">
