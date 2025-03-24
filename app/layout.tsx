@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-
+import { UserProvider } from "@auth0/nextjs-auth0/client"
 import "./globals.css"
 
 import { Inter } from "next/font/google"
@@ -25,15 +25,17 @@ export default async function RootLayout({
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster position="bottom-right" richColors />
-        </ThemeProvider>
+        <UserProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster position="bottom-right" richColors />
+          </ThemeProvider>
+        </UserProvider>
 
         <Script id="heap">
           {`// Heap tracking script...`}
