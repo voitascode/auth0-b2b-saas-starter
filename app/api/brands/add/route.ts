@@ -37,6 +37,8 @@ export async function POST(req: NextRequest) {
     }
   )
 
+  /* hello */
+
   const scraped = await scrapingRes.json()
 
   if (!Array.isArray(scraped) || scraped.length === 0) {
