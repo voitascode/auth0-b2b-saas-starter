@@ -10,6 +10,7 @@ export const GET = appClient.handleAuth({
     // as this is a route handler.
     // See: https://nextjs.org/docs/app/building-your-application/routing/route-handlers#url-query-parameters
     // @ts-ignore
+
     const searchParams = request.nextUrl.searchParams
     const organization = searchParams.get("organization")
     const invitation = searchParams.get("invitation")
@@ -27,7 +28,7 @@ export const GET = appClient.handleAuth({
     authorizationParams: {
       screen_hint: "signup",
     },
-    returnTo: "/",
+    returnTo: "/api/users/create",
   }),
   onError(_req: NextRequest, error: HandlerError) {
     redirect(
