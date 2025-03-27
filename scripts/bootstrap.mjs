@@ -7,7 +7,7 @@ const APP_BASE_URL = "http://localhost:3000"
 const MANAGEMENT_CLIENT_NAME = "SaaStart Management"
 const DASHBOARD_CLIENT_NAME = "SaaStart Dashboard"
 const DEFAULT_CONNECTION_NAME = "SaaStart-Shared-Database"
-const CUSTOM_CLAIMS_NAMESPACE = "https://example.com"
+const CUSTOM_CLAIMS_NAMESPACE = "http://localhost:3000"
 
 // checks
 
@@ -198,7 +198,7 @@ try {
       "description": "The client to facilitate login to the dashboard in the context of an organization.",
       "callbacks": [`${APP_BASE_URL}/api/auth/callback`],
       "allowed_logout_urls": [APP_BASE_URL],
-      "initiate_login_uri": "https://example.com/api/auth/login",
+      "initiate_login_uri": `${CUSTOM_CLAIMS_NAMESPACE}/api/auth/login`,
       "app_type": "regular_web",
       "oidc_conformant": true,
       "grant_types": ["authorization_code","refresh_token"],
@@ -475,7 +475,7 @@ try {
 APP_BASE_URL=${APP_BASE_URL}
 
 # Global Auth0 SDK configuration
-NEXT_PUBLIC_AUTH0_DOMAIN=${AUTH0_DOMAIN}
+NEXT_PRIVAT_AUTH0_DOMAIN=${AUTH0_DOMAIN}
 AUTH0_MANAGEMENT_API_DOMAIN=${AUTH0_DOMAIN}
 SESSION_ENCRYPTION_SECRET=${randomBytes(32).toString("hex")}
 

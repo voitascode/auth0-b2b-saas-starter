@@ -51,6 +51,17 @@ export async function createOrganization(formData: FormData) {
         roles: [process.env.AUTH0_ADMIN_ROLE_ID],
       }
     )
+    console.log(organization, "organization")
+    // await fetch("api/users/create")
+
+    // TODO: CREATE WORKSPACE IN DB
+
+    await fetch("/api/workspaces/create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ workspace: organization }),
+      credentials: "include",
+    })
   } catch (error) {
     console.error("failed to create an organization", error)
     return {
